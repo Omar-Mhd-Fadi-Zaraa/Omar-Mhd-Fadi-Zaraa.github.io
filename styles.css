@@ -12,8 +12,8 @@
 html,body{height:100%}
 body{
   margin:0;
-  /* gradient from the lighter background color to the darker card color */
-  background: linear-gradient(180deg, var(--bg) 0%, var(--card) 100%);
+  /* single background color */
+  background: var(--bg);
   color:#e6eef8;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -127,8 +127,11 @@ header{
 .card{
   padding:18px;
   border-radius:12px;
-  background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.01));
-  border:1px solid rgba(255,255,255,0.03);
+  /* use a subtle translucent "glass" overlay so cards blend with the page gradient
+     (avoids a hard seam where different solid colors meet on small screens) */
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  border:1px solid rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
 }
 
 /* Right column */
@@ -156,7 +159,7 @@ main{
 .section {
   padding:18px;
   border-radius:12px;
-  background:var(--glass);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border:1px solid rgba(255,255,255,0.02);
 }
 
