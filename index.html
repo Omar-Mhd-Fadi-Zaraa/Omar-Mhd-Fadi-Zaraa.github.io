@@ -1,145 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Portfolio — Up-and-Coming ML Engineer</title>
-    <meta name="description" content="Portfolio of an up-and-coming Machine Learning engineer — projects, skills and contact." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Portfolio of an up-and-coming Machine Learning engineer — projects, skills and contact."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <div class="brand">
-                <div class="avatar" aria-hidden="true">YZ</div>
+      <header>
+        <div class="brand">
+          <div class="avatar" aria-hidden="true">
+            <img src="images/pfp.png" alt="Profile Picture" />
+          </div>
+          <div>
+            <div style="font-weight: 700">Omar Zarraa</div>
+            <div style="font-size: 13px; color: var(--muted)">
+              Machine Learning Engineer
+            </div>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero card">
+        <div class="hero-left">
+          <h1>Hi — I'm Omar Zarraa.</h1>
+          <p class="headline">
+            I'm an up-and-coming Machine Learning engineer building scalable
+            models and data-driven products. I focus on NLP, computer vision,
+            and applied research that turns data into production-ready systems.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">See projects</a>
+            <a class="btn" href="#contact">Get in touch</a>
+            <a class="btn" href="#" title="Download resume">Resume (PDF)</a>
+          </div>
+        </div>
+
+        <div class="card profile-quick" aria-hidden="false">
+          <div style="margin-top: 6px">
+            <strong class="muted">Quick Info</strong>
+            <div class="meta" style="margin-top: 8px">
+              Open to: internships · entry-level roles · research collaborations
+            </div>
+
+            <div style="margin-top: 12px">
+              <strong class="muted">Tools</strong>
+              <div class="skills" style="margin-top: 8px">
+                <div class="skill">Git</div>
+                <div class="skill">Docker</div>
+                <div class="skill">Weights & Biases</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <main>
+        <div>
+          <section id="about" class="section">
+            <h3 style="margin: 0 0 8px 0">About</h3>
+            <p class="muted" style="margin: 0">
+              I build and iterate on models that solve real problems. I enjoy
+              turning research ideas into robust pipelines and production
+              services. My work spans prototyping models, data engineering,
+              evaluation, and deployment.
+            </p>
+
+            <div style="margin-top: 12px">
+              <strong class="muted">Skills</strong>
+              <div class="skills">
+                <div class="skill">Python</div>
+                <div class="skill">PyTorch</div>
+                <div class="skill">TensorFlow</div>
+                <div class="skill">scikit-learn</div>
+                <div class="skill">Transformers</div>
+                <div class="skill">Docker</div>
+                <div class="skill">Kubernetes</div>
+                <div class="skill">SQL</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="projects" class="section" style="margin-top: 12px">
+            <h3 style="margin: 0 0 8px 0">Selected Projects</h3>
+            <div class="projects">
+              <div class="project">
                 <div>
-                    <div style="font-weight:700">Your Name</div>
-                    <div style="font-size:13px;color:var(--muted)">Machine Learning Engineer</div>
+                  <div style="font-weight: 700">
+                    1. Lightweight Sentiment Classifier
+                  </div>
+                  <div class="meta">
+                    Distilled Transformer for low-latency predictions (Python,
+                    PyTorch)
+                  </div>
                 </div>
-            </div>
-            <nav class="nav" aria-label="Primary">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+                <div class="muted">Demo</div>
+              </div>
 
-        <section class="hero card">
-            <div class="hero-left">
-                <h1>Hi — I'm Your Name.</h1>
-                <p class="headline">I'm an up-and-coming Machine Learning engineer building scalable models and data-driven products. I focus on NLP, computer vision, and applied research that turns data into production-ready systems.</p>
-
-                <div class="cta-row">
-                    <a class="btn btn-primary" href="#projects">See projects</a>
-                    <a class="btn" href="#contact">Get in touch</a>
-                    <a class="btn" href="#" title="Download resume">Resume (PDF)</a>
+              <div class="project">
+                <div>
+                  <div style="font-weight: 700">
+                    2. Production Image Classifier
+                  </div>
+                  <div class="meta">
+                    End-to-end pipeline with preprocessing, model versioning,
+                    and deployment
+                  </div>
                 </div>
-            </div>
+                <div class="muted">Repo</div>
+              </div>
 
-            <div class="card profile" aria-hidden="false">
-                <div style="width:88px;height:88px;border-radius:12px;background:linear-gradient(135deg,#0ea5a2,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:white">YZ</div>
-                <div class="info">
-                    <div style="font-weight:700">Your Name — ML Engineer</div>
-                    <div class="meta">Currently: Open to opportunities · Based in City, Country</div>
-
-                    <div style="margin-top:12px">
-                        <div class="muted" style="font-size:13px">Focus</div>
-                        <div class="meta" style="margin-top:6px">NLP · Computer Vision · Model Deployment · MLOps</div>
-                    </div>
+              <div class="project">
+                <div>
+                  <div style="font-weight: 700">3. Time-Series Forecasting</div>
+                  <div class="meta">
+                    Forecasting pipeline for demand prediction with uncertainty
+                    estimates
+                  </div>
                 </div>
+                <div class="muted">Paper</div>
+              </div>
             </div>
-        </section>
+          </section>
+        </div>
 
-        <main>
-            <div>
-                <section id="about" class="section">
-                    <h3 style="margin:0 0 8px 0">About</h3>
-                    <p class="muted" style="margin:0">
-                        I build and iterate on models that solve real problems. I enjoy turning research ideas into robust pipelines and production services.
-                        My work spans prototyping models, data engineering, evaluation, and deployment.
-                    </p>
-
-                    <div style="margin-top:12px">
-                        <strong class="muted">Skills</strong>
-                        <div class="skills">
-                            <div class="skill">Python</div>
-                            <div class="skill">PyTorch</div>
-                            <div class="skill">TensorFlow</div>
-                            <div class="skill">scikit-learn</div>
-                            <div class="skill">Transformers</div>
-                            <div class="skill">Docker</div>
-                            <div class="skill">Kubernetes</div>
-                            <div class="skill">SQL</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="projects" class="section" style="margin-top:12px">
-                    <h3 style="margin:0 0 8px 0">Selected Projects</h3>
-                    <div class="projects">
-                        <div class="project">
-                            <div>
-                                <div style="font-weight:700">1. Lightweight Sentiment Classifier</div>
-                                <div class="meta">Distilled Transformer for low-latency predictions (Python, PyTorch)</div>
-                            </div>
-                            <div class="muted">Demo</div>
-                        </div>
-
-                        <div class="project">
-                            <div>
-                                <div style="font-weight:700">2. Production Image Classifier</div>
-                                <div class="meta">End-to-end pipeline with preprocessing, model versioning, and deployment</div>
-                            </div>
-                            <div class="muted">Repo</div>
-                        </div>
-
-                        <div class="project">
-                            <div>
-                                <div style="font-weight:700">3. Time-Series Forecasting</div>
-                                <div class="meta">Forecasting pipeline for demand prediction with uncertainty estimates</div>
-                            </div>
-                            <div class="muted">Paper</div>
-                        </div>
-                    </div>
-                </section>
+        <aside>
+          <section class="section">
+            <h4 style="margin: 0 0 8px 0">Contact</h4>
+            <p class="muted" style="margin: 0 0 12px 0">
+              I'm open to collaborations, internships, and junior ML roles.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <a class="social" href="mailto:you@example.com">✉️ Email</a>
+              <a class="social" href="#" target="_blank" rel="noopener"
+                >GitHub</a
+              >
+              <a class="social" href="#" target="_blank" rel="noopener"
+                >LinkedIn</a
+              >
+              <a class="social" href="#" target="_blank" rel="noopener"
+                >Resume</a
+              >
             </div>
+          </section>
 
-            <aside>
-                <section class="section">
-                    <h4 style="margin:0 0 8px 0">Contact</h4>
-                    <p class="muted" style="margin:0 0 12px 0">I'm open to collaborations, internships, and junior ML roles.</p>
-                    <div style="display:flex;flex-direction:column;gap:8px">
-                        <a class="social" href="mailto:you@example.com">✉️ Email</a>
-                        <a class="social" href="#" target="_blank" rel="noopener">GitHub</a>
-                        <a class="social" href="#" target="_blank" rel="noopener">LinkedIn</a>
-                        <a class="social" href="#" target="_blank" rel="noopener">Resume</a>
-                    </div>
-                </section>
+          <!-- Quick Info merged into hero card -->
+        </aside>
+      </main>
 
-                <section class="section" style="margin-top:12px">
-                    <h4 style="margin:0 0 8px 0">Quick Info</h4>
-                    <div class="meta">Open to: internships · entry-level roles · research collaborations</div>
-                    <div style="margin-top:12px">
-                        <strong class="muted">Tools</strong>
-                        <div class="skills" style="margin-top:8px">
-                            <div class="skill">Git</div>
-                            <div class="skill">Docker</div>
-                            <div class="skill">Weights & Biases</div>
-                        </div>
-                    </div>
-                </section>
-            </aside>
-        </main>
-
-        <footer>
-            <div>Built by Your Name — © <span id="year"></span></div>
-        </footer>
+      <footer>
+        <div>Built by Your Name — © <span id="year"></span></div>
+      </footer>
     </div>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-</body>
+  </body>
 </html>
