@@ -12,7 +12,8 @@
 html,body{height:100%}
 body{
   margin:0;
-  background:linear-gradient(180deg,#071020 0%, #07172a 60%);
+  /* gradient from the lighter background color to the darker card color */
+  background: linear-gradient(180deg, var(--bg) 0%, var(--card) 100%);
   color:#e6eef8;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
