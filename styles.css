@@ -102,6 +102,7 @@ header {
   align-items: center;
   font-weight: 600;
   color: var(--muted);
+  position: relative;
 }
 .nav-left {
   display: flex;
@@ -112,6 +113,19 @@ header {
   display: flex;
   align-items: center;
 }
+
+/* Nav toggle (hamburger) - hidden on large screens */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--btn-border);
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.nav-toggle:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 .nav-link {
   color: var(--muted);
   text-decoration: none;
@@ -148,6 +162,45 @@ header {
   .hero {
     grid-template-columns: 1fr 360px;
   }
+}
+
+/* Mobile / small screen nav behavior */
+@media (max-width: 819px) {
+  .nav-left {
+    display: none;
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: calc(100% + 8px);
+    background: var(--card);
+    border: 3px solid var(--card-border);
+    border-radius: 10px;
+    padding: 12px; /* more breathing room */
+    flex-direction: column;
+    gap: 8px; /* larger gap between items */
+    box-shadow: var(--elev-shadow);
+    z-index: 30;
+    overflow: hidden; /* clip child backgrounds to container */
+    width: 200px;
+  }
+  .nav-left a {
+    display: block;
+    margin-top: 6px;
+    /* padding: 14px 15px; */
+    color: var(--muted); /* use muted text color in dropdown */
+    border-radius: 8px;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  .nav-left a:hover {
+    background: var(--glass-2);
+    color: var(--text);
+  }
+  .nav.open .nav-left {
+    display: flex;
+  }
+  .nav-toggle { display: inline-flex; }
+  .theme-toggle { margin-left: 8px; }
 }
 .hero-left h1 {
   margin: 0 0 8px 0;

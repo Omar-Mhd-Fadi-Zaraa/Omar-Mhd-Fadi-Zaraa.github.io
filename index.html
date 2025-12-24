@@ -39,6 +39,9 @@
           </div>
 
           <div class="nav-right">
+            <!-- Menu toggle visible on small screens -->
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Open menu">☰</button>
+
             <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle light/dark">
               <span class="toggle-sun" aria-hidden="true">☀️</span>
               <span class="toggle-moon" aria-hidden="true">🌙</span>
@@ -205,6 +208,35 @@
             localStorage.setItem(key, next);
           });
         }
+      })();
+
+      // Responsive nav toggle for small screens
+      (function(){
+        const nav = document.querySelector('.nav');
+        const toggle = document.getElementById('nav-toggle');
+        if(!nav || !toggle) return;
+        const setOpen = (open)=>{
+          if(open){
+            nav.classList.add('open');
+            toggle.setAttribute('aria-expanded','true');
+          } else {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded','false');
+          }
+        };
+        toggle.addEventListener('click', ()=>{
+          setOpen(!nav.classList.contains('open'));
+        });
+        // close menu on resize to large screens
+        window.addEventListener('resize', ()=>{
+          if(window.innerWidth > 819) setOpen(false);
+        });
+        // close when clicking outside
+        document.addEventListener('click', (e)=>{
+          if(!nav.classList.contains('open')) return;
+          if(nav.contains(e.target) || toggle.contains(e.target)) return;
+          setOpen(false);
+        });
       })();
     </script>
   </body>
