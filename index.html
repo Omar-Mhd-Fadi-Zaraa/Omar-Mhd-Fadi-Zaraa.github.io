@@ -180,6 +180,7 @@
             >o.zarraa.2005@gmail.com</a
           >
         </div>
+        <span id="copy-feedback" class="visually-hidden" aria-live="polite"></span>
         <div>Built by Omar Zarraa — © <span id="year"></span></div>
       </footer>
     </div>
@@ -237,6 +238,58 @@
           if(nav.contains(e.target) || toggle.contains(e.target)) return;
           setOpen(false);
         });
+      })();
+
+      // Copy-to-clipboard for phone and email
+      (function(){
+        const feedback = document.getElementById('copy-feedback');
+        const phone = document.querySelector('.phone-link');
+        const email = document.querySelector('.email-link');
+        if(!phone && !email) return;
+
+        const copyText = (el, text)=>{
+          const fallbackCopy = (t)=>{
+            const ta = document.createElement('textarea');
+            ta.value = t;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'absolute';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch(e) {}
+            document.body.removeChild(ta);
+            return Promise.resolve();
+          };
+          const p = navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(text) : fallbackCopy(text);
+          return p.then(()=>{
+            el.classList.add('copied');
+            if(feedback) feedback.textContent = 'Copied to clipboard';
+            setTimeout(()=>{ el.classList.remove('copied'); if(feedback) feedback.textContent = ''; }, 1400);
+          }).catch(()=>{
+            // best-effort fallback message
+            if(feedback) feedback.textContent = 'Copy failed';
+            setTimeout(()=>{ if(feedback) feedback.textContent = ''; }, 1400);
+          });
+        };
+
+        if(phone){
+          phone.addEventListener('click', (e)=>{
+            const txt = (phone.dataset && phone.dataset.copy) ? phone.dataset.copy : phone.textContent.trim();
+            copyText(phone, txt);
+          });
+          // make it focusable for keyboard users
+          if(!phone.hasAttribute('tabindex')) phone.setAttribute('tabindex','0');
+          phone.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); phone.click(); } });
+        }
+
+        if(email){
+          email.addEventListener('click', (e)=>{
+            // prevent opening mail client; copy address instead
+            e.preventDefault();
+            const txt = email.textContent.trim() || (email.getAttribute('href')||'').replace(/^mailto:/,'');
+            copyText(email, txt);
+          });
+        }
       })();
     </script>
   </body>

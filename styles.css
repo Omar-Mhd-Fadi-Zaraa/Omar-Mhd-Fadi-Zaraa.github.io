@@ -459,6 +459,28 @@ a.social {
   text-decoration: none;
   font-weight: 600;
 }
+
+/* Copy-to-clipboard affordance */
+.phone-link,
+.email-link {
+  cursor: pointer;
+  transition: color 160ms ease, transform 160ms ease;
+}
+.phone-link.copied,
+.email-link.copied {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Visually hidden helper for accessible live regions */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0; padding: 0; margin: -1px;
+}
 .footer-sep {
   color: rgba(255, 255, 255, 0.12);
   margin: 0 8px;
