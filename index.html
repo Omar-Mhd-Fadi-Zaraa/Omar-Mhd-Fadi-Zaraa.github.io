@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="images/circle-pfp.png">
+    <link rel="icon" href="images/circle-pfp.png" />
   </head>
   <body>
     <div class="container">
@@ -40,9 +40,21 @@
 
           <div class="nav-right">
             <!-- Menu toggle visible on small screens -->
-            <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Open menu">☰</button>
+            <button
+              id="nav-toggle"
+              class="nav-toggle"
+              aria-expanded="false"
+              aria-label="Open menu"
+            >
+              ☰
+            </button>
 
-            <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle light/dark">
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              aria-pressed="false"
+              title="Toggle light/dark"
+            >
               <span class="toggle-sun" aria-hidden="true">☀️</span>
               <span class="toggle-moon" aria-hidden="true">🌙</span>
             </button>
@@ -54,15 +66,17 @@
         <div class="hero-left">
           <h1>Hi — I'm Omar Zarraa.</h1>
           <p class="headline">
-            I'm an up-and-coming Machine Learning engineer building scalable
-            models and data-driven products. I focus on NLP, computer vision,
-            and applied research that turns data into production-ready systems.
+            I'm an up-and-coming Machine Learning engineer building models and
+            agents. I focus on RAG and fine tuning, as well as automation of
+            systems using AI. I enjoy learning and knowledge, and to satisfy my
+            curiosity I have delved into back-end and kernel development once or
+            twice.
           </p>
 
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">See projects</a>
             <a class="btn" href="#contact">Get in touch</a>
-            <a class="btn" href="#" title="Download resume">Resume (PDF)</a>
+            <a class="btn" href="PDFs/Omar Zarraa CV.pdf" title="Download resume">Resume (PDF)</a>
           </div>
         </div>
 
@@ -70,7 +84,9 @@
           <div style="margin-top: 6px">
             <strong class="muted">Quick Info</strong>
             <div class="meta" style="margin-top: 8px">
-              Open to: internships · entry-level roles · research collaborations
+                <p>Age: <span id="age" aria-live="polite" aria-atomic="true"></span></p>
+              <p>Years of experience: ~3.</p>
+              <p>Hobbies: Art, 3D modelling.</p>
             </div>
           </div>
         </div>
@@ -79,7 +95,7 @@
       <!-- Highlighted projects section replaces the previous content -->
       <main>
         <div class="highlights">
-          <h2 style="margin:0 0 12px 0">Highlighted Projects</h2>
+          <h2 style="margin: 0 0 12px 0">Highlighted Projects</h2>
           <div class="projects-grid">
             <!-- Project card template - replace placeholders with real content -->
             <article class="project-card">
@@ -88,7 +104,10 @@
               </div>
               <div class="project-body">
                 <h4 class="project-title">Marcel Jump</h4>
-                <p class="project-desc">A small and quick project made right after finishing the Python course.</p>
+                <p class="project-desc">
+                  A small and quick project made right after finishing the
+                  Python course.
+                </p>
                 <div class="project-tools">
                   <span class="skill">Python</span>
                   <span class="skill">PyGame</span>
@@ -98,11 +117,17 @@
 
             <article class="project-card">
               <div class="project-image">
-                <img src="images/Data_Analysis.png" alt="Project 2 screenshot" />
+                <img
+                  src="images/Data_Analysis.png"
+                  alt="Project 2 screenshot"
+                />
               </div>
               <div class="project-body">
                 <h4 class="project-title">Data Engineering Jobs in Denmark</h4>
-                <p class="project-desc">Simple data analysis done on a preexisting data set for data engineering job info in Denmark.</p>
+                <p class="project-desc">
+                  Simple data analysis done on a preexisting data set for data
+                  engineering job info in Denmark.
+                </p>
                 <div class="project-tools">
                   <span class="skill">Python</span>
                   <span class="skill">Pandas</span>
@@ -118,7 +143,10 @@
               </div>
               <div class="project-body">
                 <h4 class="project-title">University System REST API</h4>
-                <p class="project-desc">A simple API for a university system handling enrollment, student marks, course addition and deletion, etc.</p>
+                <p class="project-desc">
+                  A simple API for a university system handling enrollment,
+                  student marks, course addition and deletion, etc.
+                </p>
                 <div class="project-tools">
                   <span class="skill">Go</span>
                   <span class="skill">Gin Framework</span>
@@ -132,7 +160,7 @@
 
       <footer>
         <div class="footer-actions">
-          <div class="footer-links">
+          <div class="footer-links" id="contact">
             <a
               class="icon-link"
               href="https://www.github.com/Omar-Mhd-Fadi-Zaraa"
@@ -180,7 +208,11 @@
             >o.zarraa.2005@gmail.com</a
           >
         </div>
-        <span id="copy-feedback" class="visually-hidden" aria-live="polite"></span>
+        <span
+          id="copy-feedback"
+          class="visually-hidden"
+          aria-live="polite"
+        ></span>
         <div>Built by Omar Zarraa — © <span id="year"></span></div>
       </footer>
     </div>
@@ -189,22 +221,28 @@
       document.getElementById("year").textContent = new Date().getFullYear();
 
       // Theme toggle with persistence
-      (function(){
-        const key = 'portfolio_theme';
-        const btn = document.getElementById('theme-toggle');
-        const apply = (mode)=>{
-          if(mode==='light') document.body.classList.add('light-mode');
-          else document.body.classList.remove('light-mode');
-          if(btn) btn.setAttribute('aria-pressed', mode==='light');
+      (function () {
+        const key = "portfolio_theme";
+        const btn = document.getElementById("theme-toggle");
+        const apply = (mode) => {
+          if (mode === "light") document.body.classList.add("light-mode");
+          else document.body.classList.remove("light-mode");
+          if (btn) btn.setAttribute("aria-pressed", mode === "light");
         };
         let mode = localStorage.getItem(key);
-        if(!mode){
-          mode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (!mode) {
+          mode =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
         }
         apply(mode);
-        if(btn){
-          btn.addEventListener('click', ()=>{
-            const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+        if (btn) {
+          btn.addEventListener("click", () => {
+            const next = document.body.classList.contains("light-mode")
+              ? "dark"
+              : "light";
             apply(next);
             localStorage.setItem(key, next);
           });
@@ -212,84 +250,122 @@
       })();
 
       // Responsive nav toggle for small screens
-      (function(){
-        const nav = document.querySelector('.nav');
-        const toggle = document.getElementById('nav-toggle');
-        if(!nav || !toggle) return;
-        const setOpen = (open)=>{
-          if(open){
-            nav.classList.add('open');
-            toggle.setAttribute('aria-expanded','true');
+      (function () {
+        const nav = document.querySelector(".nav");
+        const toggle = document.getElementById("nav-toggle");
+        if (!nav || !toggle) return;
+        const setOpen = (open) => {
+          if (open) {
+            nav.classList.add("open");
+            toggle.setAttribute("aria-expanded", "true");
           } else {
-            nav.classList.remove('open');
-            toggle.setAttribute('aria-expanded','false');
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
           }
         };
-        toggle.addEventListener('click', ()=>{
-          setOpen(!nav.classList.contains('open'));
+        toggle.addEventListener("click", () => {
+          setOpen(!nav.classList.contains("open"));
         });
         // close menu on resize to large screens
-        window.addEventListener('resize', ()=>{
-          if(window.innerWidth > 819) setOpen(false);
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 819) setOpen(false);
         });
         // close when clicking outside
-        document.addEventListener('click', (e)=>{
-          if(!nav.classList.contains('open')) return;
-          if(nav.contains(e.target) || toggle.contains(e.target)) return;
+        document.addEventListener("click", (e) => {
+          if (!nav.classList.contains("open")) return;
+          if (nav.contains(e.target) || toggle.contains(e.target)) return;
           setOpen(false);
         });
       })();
 
       // Copy-to-clipboard for phone and email
-      (function(){
-        const feedback = document.getElementById('copy-feedback');
-        const phone = document.querySelector('.phone-link');
-        const email = document.querySelector('.email-link');
-        if(!phone && !email) return;
+      (function () {
+        const feedback = document.getElementById("copy-feedback");
+        const phone = document.querySelector(".phone-link");
+        const email = document.querySelector(".email-link");
+        if (!phone && !email) return;
 
-        const copyText = (el, text)=>{
-          const fallbackCopy = (t)=>{
-            const ta = document.createElement('textarea');
+        const copyText = (el, text) => {
+          const fallbackCopy = (t) => {
+            const ta = document.createElement("textarea");
             ta.value = t;
-            ta.setAttribute('readonly', '');
-            ta.style.position = 'absolute';
-            ta.style.left = '-9999px';
+            ta.setAttribute("readonly", "");
+            ta.style.position = "absolute";
+            ta.style.left = "-9999px";
             document.body.appendChild(ta);
             ta.select();
-            try { document.execCommand('copy'); } catch(e) {}
+            try {
+              document.execCommand("copy");
+            } catch (e) {}
             document.body.removeChild(ta);
             return Promise.resolve();
           };
-          const p = navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(text) : fallbackCopy(text);
-          return p.then(()=>{
-            el.classList.add('copied');
-            if(feedback) feedback.textContent = 'Copied to clipboard';
-            setTimeout(()=>{ el.classList.remove('copied'); if(feedback) feedback.textContent = ''; }, 1400);
-          }).catch(()=>{
-            // best-effort fallback message
-            if(feedback) feedback.textContent = 'Copy failed';
-            setTimeout(()=>{ if(feedback) feedback.textContent = ''; }, 1400);
-          });
+          const p =
+            navigator.clipboard && navigator.clipboard.writeText
+              ? navigator.clipboard.writeText(text)
+              : fallbackCopy(text);
+          return p
+            .then(() => {
+              el.classList.add("copied");
+              if (feedback) feedback.textContent = "Copied to clipboard";
+              setTimeout(() => {
+                el.classList.remove("copied");
+                if (feedback) feedback.textContent = "";
+              }, 1400);
+            })
+            .catch(() => {
+              // best-effort fallback message
+              if (feedback) feedback.textContent = "Copy failed";
+              setTimeout(() => {
+                if (feedback) feedback.textContent = "";
+              }, 1400);
+            });
         };
 
-        if(phone){
-          phone.addEventListener('click', (e)=>{
-            const txt = (phone.dataset && phone.dataset.copy) ? phone.dataset.copy : phone.textContent.trim();
+        if (phone) {
+          phone.addEventListener("click", (e) => {
+            const txt =
+              phone.dataset && phone.dataset.copy
+                ? phone.dataset.copy
+                : phone.textContent.trim();
             copyText(phone, txt);
           });
           // make it focusable for keyboard users
-          if(!phone.hasAttribute('tabindex')) phone.setAttribute('tabindex','0');
-          phone.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); phone.click(); } });
+          if (!phone.hasAttribute("tabindex"))
+            phone.setAttribute("tabindex", "0");
+          phone.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              phone.click();
+            }
+          });
         }
 
-        if(email){
-          email.addEventListener('click', (e)=>{
+        if (email) {
+          email.addEventListener("click", (e) => {
             // prevent opening mail client; copy address instead
             e.preventDefault();
-            const txt = email.textContent.trim() || (email.getAttribute('href')||'').replace(/^mailto:/,'');
+            const txt =
+              email.textContent.trim() ||
+              (email.getAttribute("href") || "").replace(/^mailto:/, "");
             copyText(email, txt);
           });
         }
+      })();
+
+      // Age calculation: compute years since 2005-06-22 and insert into Quick Info
+      (function () {
+        const ageEl = document.getElementById("age");
+        if (!ageEl) return;
+        function yearsSince(dateISO) {
+          const b = new Date(dateISO);
+          const now = new Date();
+          let years = now.getFullYear() - b.getFullYear();
+          const m = now.getMonth() - b.getMonth();
+          if (m < 0 || (m === 0 && now.getDate() < b.getDate())) years--;
+          return years;
+        }
+        ageEl.textContent = yearsSince("2005-06-22") + " years old.";
       })();
     </script>
   </body>
