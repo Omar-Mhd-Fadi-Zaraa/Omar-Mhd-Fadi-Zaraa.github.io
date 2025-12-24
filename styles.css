@@ -21,7 +21,7 @@ body.light-mode {
   --accent: #6b46c1;
   --glass: rgba(2, 6, 23, 0.02);
   --glass-2: rgba(2, 6, 23, 0.04);
-  --text: #0f1724;
+  --text: rgba(2, 6, 23, 1); ;
   --card-border: rgba(2, 6, 23, 0.08);
   --btn-border: rgba(2, 6, 23, 0.08);
   --elev-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
