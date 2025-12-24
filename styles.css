@@ -9,6 +9,16 @@
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
 }
+/* Light-mode variables (applied when body.light-mode) */
+body.light-mode{
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --muted: #475569;
+  --accent: #6b46c1;
+  --glass: rgba(2,6,23,0.02);
+  --glass-2: rgba(2,6,23,0.04);
+  color-scheme: light;
+}
 * {
   box-sizing: border-box;
 }
@@ -44,6 +54,9 @@ header {
   gap: 12px;
   align-items: center;
 }
+.brand-text{display:flex;flex-direction:column}
+.brand-name{font-weight:700}
+.brand-title{font-size:13px;color:var(--muted)}
 .avatar {
   width: 56px;
   height: 56px;
@@ -74,6 +87,10 @@ header {
   font-weight: 600;
   color: var(--muted);
 }
+.nav-left{display:flex;gap:8px;align-items:center}
+.nav-right{display:flex;align-items:center}
+.nav-link{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+.nav-link:hover{color:#fff;background:var(--glass-2)}
 .nav a {
   color: var(--muted);
   text-decoration: none;
@@ -193,6 +210,12 @@ main {
 .project-desc{margin:0 0 12px 0;color:var(--muted);font-size:15px}
 .project-tools{display:flex;gap:8px;flex-wrap:wrap}
 .project-tools .skill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;font-size:13px}
+
+/* Theme toggle */
+.theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;cursor:pointer;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.toggle-sun{display:none}
+body.light-mode .toggle-sun{display:inline}
+body.light-mode .toggle-moon{display:none}
 
 @media (min-width:1200px) {
   /* Slightly larger images and spacing on very wide screens */
