@@ -5,18 +5,26 @@
   --accent: #7c3aed;
   --glass: rgba(255, 255, 255, 0.03);
   --glass-2: rgba(255, 255, 255, 0.02);
+  --text: #e6eef8;
+  --card-border: rgba(255, 255, 255, 0.02);
+  --btn-border: rgba(255, 255, 255, 0.04);
+  --elev-shadow: 0 6px 28px rgba(3, 8, 20, 0.6);
   color-scheme: dark;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
 }
 /* Light-mode variables (applied when body.light-mode) */
-body.light-mode{
+body.light-mode {
   --bg: #f7fafc;
   --card: #ffffff;
   --muted: #475569;
   --accent: #6b46c1;
-  --glass: rgba(2,6,23,0.02);
-  --glass-2: rgba(2,6,23,0.04);
+  --glass: rgba(2, 6, 23, 0.02);
+  --glass-2: rgba(2, 6, 23, 0.04);
+  --text: #0f1724;
+  --card-border: rgba(2, 6, 23, 0.08);
+  --btn-border: rgba(2, 6, 23, 0.08);
+  --elev-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
   color-scheme: light;
 }
 * {
@@ -30,7 +38,7 @@ body {
   margin: 0;
   /* single background color */
   background: var(--bg);
-  color: #e6eef8;
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.45;
@@ -54,9 +62,17 @@ header {
   gap: 12px;
   align-items: center;
 }
-.brand-text{display:flex;flex-direction:column}
-.brand-name{font-weight:700}
-.brand-title{font-size:13px;color:var(--muted)}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+.brand-name {
+  font-weight: 700;
+}
+.brand-title {
+  font-size: 13px;
+  color: var(--muted);
+}
 .avatar {
   width: 56px;
   height: 56px;
@@ -87,10 +103,25 @@ header {
   font-weight: 600;
   color: var(--muted);
 }
-.nav-left{display:flex;gap:8px;align-items:center}
-.nav-right{display:flex;align-items:center}
-.nav-link{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
-.nav-link:hover{color:#fff;background:var(--glass-2)}
+.nav-left {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.nav-link:hover {
+  color: var(--text);
+  background: var(--glass-2);
+}
 .nav a {
   color: var(--muted);
   text-decoration: none;
@@ -98,7 +129,7 @@ header {
   border-radius: 8px;
 }
 .nav a:hover {
-  color: #fff;
+  color: var(--text);
   background: var(--glass-2);
 }
 
@@ -110,8 +141,8 @@ header {
   margin-bottom: 28px;
   padding: 20px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-  box-shadow: 0 6px 28px rgba(3, 8, 20, 0.6);
+  background: linear-gradient(180deg, var(--glass), var(--glass-2));
+  box-shadow: var(--elev-shadow);
 }
 @media (min-width: 820px) {
   .hero {
@@ -157,13 +188,10 @@ header {
   border-radius: 12px;
   /* use a subtle translucent "glass" overlay so cards blend with the page gradient
      (avoids a hard seam where different solid colors meet on small screens) */
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.015)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  background: linear-gradient(180deg, var(--glass), var(--glass-2));
+  border: 1px solid var(--card-border);
   backdrop-filter: blur(6px);
+  box-shadow: var(--elev-shadow);
 }
 
 /* Right column */
@@ -186,45 +214,94 @@ main {
   gap: 18px;
   margin-top: 18px;
 }
-@media (min-width:820px) {
+@media (min-width: 820px) {
   /* Always show two columns on larger screens for better focus */
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.02);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.02);
   border-radius: 12px;
   overflow: hidden;
 }
-.project-image img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  display:block;
+.project-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
 }
-.project-body{padding:16px}
-.project-title{margin:0 0 8px 0;font-size:18px}
-.project-desc{margin:0 0 12px 0;color:var(--muted);font-size:15px}
-.project-tools{display:flex;gap:8px;flex-wrap:wrap}
-.project-tools .skill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;font-size:13px}
+.project-body {
+  padding: 16px;
+}
+.project-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: var(--text);
+}
+.project-desc {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.project-tools {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.project-tools .skill {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
 
 /* Theme toggle */
-.theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;cursor:pointer;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
-.toggle-sun{display:none}
-body.light-mode .toggle-sun{display:inline}
-body.light-mode .toggle-moon{display:none}
-
-@media (min-width:1200px) {
-  /* Slightly larger images and spacing on very wide screens */
-  .project-image img { height:260px; }
-  .project-body { padding:20px; }
-  .project-title { font-size:20px; }
-  .project-desc { font-size:15px; }
+.theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
- 
+.toggle-sun {
+  display: none;
+  border: 1px solid var(--btn-border);
+}
+body.light-mode .toggle-sun {
+  display: inline;
+}
+body.light-mode .toggle-moon {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  /* Slightly larger images and spacing on very wide screens */
+  .project-image img {
+    height: 260px;
+  }
+  .project-body {
+    padding: 20px;
+  }
+  .project-title {
+    font-size: 20px;
+  }
+  .project-desc {
+    font-size: 15px;
+  }
+}
 
 .skills {
   display: flex;
@@ -364,14 +441,11 @@ a.social {
 .project-card {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  background: linear-gradient(180deg, var(--glass), var(--glass-2));
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: var(--elev-shadow);
 }
 .project-image img {
   width: 100%;
