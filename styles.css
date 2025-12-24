@@ -222,6 +222,7 @@ a.social{
   align-items:center;
   margin-top:10px;
 }
+.footer-actions{justify-content:center}
 .footer-actions .footer-links{display:flex;gap:8px;align-items:center}
 .icon-link{
   color:var(--muted);
@@ -240,7 +241,9 @@ a.social{
   text-decoration:none;
   font-weight:600;
 }
+.email-link{color:var(--muted);text-decoration:none;font-weight:600}
+.footer-sep{color:rgba(255,255,255,0.12);margin:0 8px}
 
 @media (max-width:520px){
-  .footer-actions{flex-direction:column;align-items:flex-start;gap:6px}
+  .footer-actions{flex-direction:column;align-items:center;gap:6px}
 }
