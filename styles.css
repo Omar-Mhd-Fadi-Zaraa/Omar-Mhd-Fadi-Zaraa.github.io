@@ -530,3 +530,29 @@ a.social {
   border-radius: 8px;
   font-size: 12px;
 }
+
+/* Tighter footer spacing and smaller footer text on very small screens */
+@media (max-width: 520px) {
+  .footer-actions {
+    gap: 6px;
+    padding-bottom: 2px;
+  }
+  .footer-actions .footer-links {
+    gap: 6px;
+  }
+  .icon-link {
+    width: 22px;
+    height: 22px;
+  }
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .phone-link,
+  .email-link {
+    font-size: 10px;
+  }
+  .footer-sep {
+    margin: 0 6px;
+  }
+}
