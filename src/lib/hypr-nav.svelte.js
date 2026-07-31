@@ -19,10 +19,6 @@ export function initHyprViewport(viewport) {
 	let observer;
 
 	const onIntersect = () => {
-		const chrome = parseFloat(
-			getComputedStyle(document.documentElement).getPropertyValue('--hypr-chrome-top')
-		);
-
 		/** @type {{ id: string; dist: number } | null} */
 		let best = null;
 
@@ -30,8 +26,9 @@ export function initHyprViewport(viewport) {
 			const el = document.getElementById(ws.id);
 			if (!el) continue;
 			const rect = el.getBoundingClientRect();
-			const dist = Math.abs(rect.top - chrome);
-			if (rect.bottom > chrome + 40 && rect.top < viewport.clientHeight) {
+			const viewportTop = viewport.getBoundingClientRect().top;
+			const dist = Math.abs(rect.top - viewportTop);
+			if (rect.bottom > viewportTop + 40 && rect.top < viewportTop + viewport.clientHeight) {
 				if (!best || dist < best.dist) {
 					best = { id: ws.id, dist };
 				}

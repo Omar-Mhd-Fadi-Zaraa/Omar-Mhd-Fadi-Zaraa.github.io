@@ -1,6 +1,5 @@
 <script>
 	import QuickshellBar from './lib/QuickshellBar.svelte';
-	import WorkspaceRail from './lib/WorkspaceRail.svelte';
 	import Hero from './lib/Hero.svelte';
 	import About from './lib/About.svelte';
 	import Skills from './lib/Skills.svelte';
@@ -23,7 +22,6 @@
 <a href="#hero" class="skip-link">Skip to content</a>
 
 <QuickshellBar />
-<WorkspaceRail />
 
 <p class="hypr-hint mono" aria-hidden="true">
 	<span>1–6</span> workspace · <span>↑↓</span> focus
