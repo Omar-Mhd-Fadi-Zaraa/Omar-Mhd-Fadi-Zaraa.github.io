@@ -43,16 +43,24 @@
 							<a href="mailto:{profile.email}">{profile.email}</a>
 						</li>
 						<li>
+							<span class="label mono">phone</span>
+							<a href={profile.whatsapp} target="_blank" rel="noopener">{profile.phone}</a>
+						</li>
+						<li>
 							<span class="label mono">github</span>
 							<a href={profile.github} target="_blank" rel="noopener">
-								{profile.github.replace('https://', '')}
+								github.com/Omar-Mhd-Fadi-Zaraa
 							</a>
 						</li>
 						<li>
 							<span class="label mono">linkedin</span>
 							<a href={profile.linkedin} target="_blank" rel="noopener">
-								{profile.linkedin.replace('https://', '')}
+								linkedin.com/in/omar-zarraa-721b6935b
 							</a>
+						</li>
+						<li>
+							<span class="label mono">resume</span>
+							<a href={profile.resumeUrl} target="_blank" rel="noopener">Omar-Zarraa-cv.pdf</a>
 						</li>
 					</ul>
 				</div>

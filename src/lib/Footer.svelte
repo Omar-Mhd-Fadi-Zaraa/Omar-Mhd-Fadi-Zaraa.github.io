@@ -12,7 +12,7 @@
 	{#if embedded}
 		<div class="footer-compact">
 			<span class="logo mono">
-				<span class="prompt">6</span> arch/{profile.name.split(' ')[0].toLowerCase()}
+				<span class="prompt">6</span> arch/omar
 			</span>
 			<nav class="footer-nav" aria-label="Footer navigation">
 				{#each [
@@ -33,7 +33,7 @@
 		<div class="container footer-inner">
 			<div class="footer-brand">
 				<span class="logo mono">
-					<span class="prompt">1</span> arch/{profile.name.split(' ')[0].toLowerCase()}
+					<span class="prompt">1</span> arch/omar
 				</span>
 				<p class="footer-tagline">{profile.title}</p>
 			</div>

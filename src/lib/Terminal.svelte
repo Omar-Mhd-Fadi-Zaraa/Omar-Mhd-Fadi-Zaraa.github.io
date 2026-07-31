@@ -26,6 +26,18 @@
 		if (line.startsWith('$')) {
 			return `<span class="cmd-prompt">$</span><span class="cmd-text">${line.slice(1)}</span>`;
 		}
+		if (line === 'Damascus') {
+			return `<span class="output-wayland">${line}</span>`;
+		}
+		if (line.startsWith('IT student')) {
+			return `<span class="output-hypr">${line}</span>`;
+		}
+		if (line.includes('Music_Recommendation')) {
+			return `<span class="output-qs">${line}</span>`;
+		}
+		if (line === 'omar-zarraa') {
+			return `<span class="output-user">${line}</span>`;
+		}
 		if (line === 'wayland') {
 			return `<span class="output-wayland">${line}</span>`;
 		}
@@ -91,44 +103,6 @@
 		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		line-height: 1.7;
-	}
-
-	.terminal-header {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		padding: 0.5rem 1rem;
-		background: rgba(49, 50, 68, 0.85);
-		border-bottom: 1px solid var(--border);
-	}
-
-	.terminal-buttons {
-		display: flex;
-		gap: 6px;
-	}
-
-	.terminal-buttons span {
-		width: 11px;
-		height: 11px;
-		border-radius: 50%;
-	}
-
-	.btn-close {
-		background: var(--accent-red);
-	}
-	.btn-minimize {
-		background: var(--accent-orange);
-	}
-	.btn-maximize {
-		background: var(--accent-green);
-	}
-
-	.terminal-title {
-		flex: 1;
-		text-align: center;
-		font-size: 0.75rem;
-		color: var(--text-muted);
-		margin-right: 52px;
 	}
 
 	.terminal-body {

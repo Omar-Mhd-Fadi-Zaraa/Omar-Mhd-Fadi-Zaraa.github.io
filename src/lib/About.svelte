@@ -28,11 +28,11 @@
 				<dl class="stats">
 					<div class="stat">
 						<dt>role</dt>
-						<dd>AI / ML Engineer</dd>
+						<dd>ML Engineer</dd>
 					</div>
 					<div class="stat">
-						<dt>os</dt>
-						<dd>Arch Linux (daily)</dd>
+						<dt>education</dt>
+						<dd>Arab Int'l University</dd>
 					</div>
 					<div class="stat">
 						<dt>compositor</dt>
@@ -48,7 +48,7 @@
 					</div>
 					<div class="stat">
 						<dt>focus</dt>
-						<dd>LLMs, CV, Infra</dd>
+						<dd>RAG, agents, ML</dd>
 					</div>
 					<div class="stat">
 						<dt>location</dt>

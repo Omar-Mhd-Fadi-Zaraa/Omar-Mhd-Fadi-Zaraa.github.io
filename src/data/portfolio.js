@@ -1,111 +1,155 @@
 /** @typedef {{ name: string; level: number; category: 'ai' | 'linux' | 'dev' | 'tools' }} Skill */
 /** @typedef {{ id: string; title: string; description: string; tags: string[]; category: 'ai' | 'linux' | 'fullstack'; github?: string; demo?: string; featured?: boolean }} Project */
 
+const GH = 'https://github.com/Omar-Mhd-Fadi-Zaraa';
+
 /** @type {Skill[]} */
 export const skills = [
-	{ name: 'Python', level: 95, category: 'ai' },
-	{ name: 'PyTorch / TensorFlow', level: 90, category: 'ai' },
-	{ name: 'LLMs & RAG', level: 88, category: 'ai' },
-	{ name: 'Computer Vision', level: 82, category: 'ai' },
-	{ name: 'MLOps', level: 78, category: 'ai' },
-	{ name: 'Arch Linux', level: 92, category: 'linux' },
-	{ name: 'Bash / Shell', level: 90, category: 'linux' },
-	{ name: 'Docker / Podman', level: 85, category: 'linux' },
-	{ name: 'Systemd & Networking', level: 80, category: 'linux' },
-	{ name: 'TypeScript', level: 85, category: 'dev' },
-	{ name: 'Svelte / SvelteKit', level: 82, category: 'dev' },
-	{ name: 'FastAPI', level: 88, category: 'dev' },
-	{ name: 'PostgreSQL', level: 75, category: 'dev' },
-	{ name: 'Git', level: 90, category: 'tools' },
-	{ name: 'Neovim', level: 85, category: 'tools' },
-	{ name: 'CI/CD', level: 80, category: 'tools' }
+	{ name: 'Python', level: 92, category: 'ai' },
+	{ name: 'PyTorch', level: 86, category: 'ai' },
+	{ name: 'TensorFlow', level: 84, category: 'ai' },
+	{ name: 'scikit-learn', level: 82, category: 'ai' },
+	{ name: 'Pandas / NumPy', level: 88, category: 'ai' },
+	{ name: 'RAG & fine-tuning', level: 80, category: 'ai' },
+	{ name: 'Arch Linux', level: 88, category: 'linux' },
+	{ name: 'Linux Mint', level: 78, category: 'linux' },
+	{ name: 'Bash / Shell', level: 82, category: 'linux' },
+	{ name: 'Docker', level: 76, category: 'linux' },
+	{ name: 'Go', level: 74, category: 'dev' },
+	{ name: 'Gin / REST APIs', level: 72, category: 'dev' },
+	{ name: 'PostgreSQL / SQLite', level: 70, category: 'dev' },
+	{ name: 'Svelte', level: 68, category: 'dev' },
+	{ name: 'Git', level: 88, category: 'tools' },
+	{ name: 'Matplotlib / Seaborn', level: 80, category: 'tools' }
 ];
 
 /** @type {Project[]} */
 export const projects = [
 	{
-		id: 'rag-assistant',
-		title: 'RAG Document Assistant',
+		id: 'music-ml',
+		title: 'Music Recommendation & Generation',
 		description:
-			'Local-first retrieval-augmented generation pipeline with vector search, chunking strategies, and a chat UI.',
-		tags: ['Python', 'LangChain', 'ChromaDB', 'FastAPI'],
+			'RNN-based music genre classifier with an API to recommend songs from predicted genres, plus exploratory work on transformers for music generation.',
+		tags: ['Python', 'TensorFlow', 'PyTorch', 'Matplotlib'],
 		category: 'ai',
-		github: 'https://github.com',
+		github: `${GH}/Music_Recommendation_And_Generation`,
 		featured: true
 	},
 	{
-		id: 'vision-pipeline',
-		title: 'Real-time Vision Pipeline',
+		id: 'tuxtailor',
+		title: 'TuxTailor',
 		description:
-			'Edge inference pipeline for object detection with ONNX export, batching, and latency benchmarks.',
-		tags: ['PyTorch', 'ONNX', 'OpenCV', 'CUDA'],
-		category: 'ai',
-		github: 'https://github.com',
-		demo: 'https://example.com',
-		featured: true
-	},
-	{
-		id: 'dotfiles',
-		title: 'Arch Dotfiles',
-		description:
-			'Hyprland tiling config with Quickshell bar, keybindings, blur rules, and automated Arch provisioning.',
-		tags: ['Arch', 'Hyprland', 'Quickshell', 'Bash'],
+			'Agentic application for creating company-specific Linux ISOs tailored for deployment on organizational machines.',
+		tags: ['Linux', 'Python', 'AI agents', 'Automation'],
 		category: 'linux',
-		github: 'https://github.com',
+		github: `${GH}/TuxTailor`,
 		featured: true
 	},
 	{
-		id: 'homelab',
-		title: 'Homelab Stack',
+		id: 'university-api',
+		title: 'University System REST API',
 		description:
-			'Self-hosted services on bare metal — reverse proxy, monitoring, backups, and GPU workload scheduling.',
-		tags: ['Docker', 'Nginx', 'Prometheus', 'systemd'],
-		category: 'linux',
-		github: 'https://github.com'
-	},
-	{
-		id: 'ml-dashboard',
-		title: 'ML Experiment Dashboard',
-		description:
-			'Track training runs, hyperparameters, and metrics with comparison views and export to reports.',
-		tags: ['Svelte', 'FastAPI', 'PostgreSQL', 'W&B'],
+			'REST API for a university system: enrollment, student marks, and course management for students and admins.',
+		tags: ['Go', 'Gin', 'SQLite', 'REST'],
 		category: 'fullstack',
-		github: 'https://github.com',
-		demo: 'https://example.com'
+		github: `${GH}/Univsersity_system_API`,
+		featured: true
 	},
 	{
-		id: 'cli-tool',
-		title: 'sysinfo CLI',
+		id: 'denmark-de-jobs',
+		title: 'Data Engineering Jobs in Denmark',
 		description:
-			'Rust-inspired TUI for system diagnostics — CPU, memory, disk I/O, and network stats in the terminal.',
-		tags: ['Python', 'Rich', 'psutil', 'Linux'],
+			'Exploratory data analysis on a dataset of data-engineering job postings in Denmark.',
+		tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn'],
+		category: 'ai',
+		github: `${GH}/Denmark-DE-Jobs-Data-Analysis`
+	},
+	{
+		id: 'heart-titanic-ml',
+		title: 'Heart Disease & Titanic ML',
+		description:
+			'Machine learning experiments on the classic heart disease and Titanic datasets.',
+		tags: ['Python', 'scikit-learn', 'Pandas'],
+		category: 'ai',
+		github: `${GH}/HeartDisease-Titanic-ML-Project`
+	},
+	{
+		id: 'oscar-predictor',
+		title: 'Oscar Award Predictor',
+		description: 'ML project predicting Oscar outcomes from historical nomination and feature data.',
+		tags: ['Python', 'ML'],
+		category: 'ai',
+		github: `${GH}/Oscar_Award_Predictor`
+	},
+	{
+		id: 'gittracker',
+		title: 'GitTracker',
+		description:
+			'CLI tool to visualize your contributions across local Git repositories over the last six months.',
+		tags: ['Git', 'CLI', 'Linux'],
 		category: 'linux',
-		github: 'https://github.com'
+		github: `${GH}/GitTracker`
+	},
+	{
+		id: 'omarchy-setup',
+		title: 'My Omarchy Setup',
+		description: 'Personal Linux desktop configuration and dotfiles for an Omarchy-based workflow.',
+		tags: ['Arch Linux', 'Dotfiles', 'Hyprland'],
+		category: 'linux',
+		github: `${GH}/My_Omarchy_Setup`
+	},
+	{
+		id: 'twitch-da',
+		title: 'Twitch Streamers Analytics',
+		description: 'Quick data analysis on a Twitch streamers analytics dataset from 2020.',
+		tags: ['Python', 'Pandas', 'Data analysis'],
+		category: 'ai',
+		github: `${GH}/Twitch-Streamers-DA-Project`
+	},
+	{
+		id: 'event-api',
+		title: 'Event Management REST API',
+		description: 'Backend API for an event management website.',
+		tags: ['REST', 'API', 'Backend'],
+		category: 'fullstack',
+		github: `${GH}/Event-Management-Website-REST-API`
+	},
+	{
+		id: 'marcel-jump',
+		title: 'Marcel Jump',
+		description: 'A Flappy Bird–style game built to practice game logic and polish.',
+		tags: ['Game dev', 'Practice project'],
+		category: 'fullstack',
+		github: `${GH}/Marcel-Jump`
 	}
 ];
 
 export const profile = {
-	name: 'Your Name',
-	title: 'IT Engineer · AI Developer · Hyprland on Arch',
-	tagline: 'Intelligent systems on Wayland — tiled, blurred, and built to last.',
-	email: 'you@example.com',
-	github: 'https://github.com/yourusername',
-	linkedin: 'https://linkedin.com/in/yourusername',
-	location: 'Your City, Country',
+	name: 'Omar Zarraa',
+	title: 'Machine Learning Engineer · IT Student',
+	tagline:
+		'Building models and agents — RAG, fine-tuning, and automating systems with AI.',
+	email: 'o.zarraa.2005@gmail.com',
+	phone: '+963 935 573 617',
+	whatsapp: 'https://wa.me/963935573617',
+	github: `${GH}`,
+	linkedin: 'https://www.linkedin.com/in/omar-zarraa-721b6935b',
+	resumeUrl: 'https://omar-mhd-fadi-zaraa.github.io/PDFs/Omar-Zarraa-cv.pdf',
+	location: 'Damascus, Syria',
 	about: [
-		'I design and ship AI-powered applications — from model training and fine-tuning to production APIs and user-facing interfaces.',
-		'Linux is my daily driver. I run Arch with Hyprland and Quickshell — Wayland tiling, frosted UI, and workflows tuned in config files rather than mouse drags.',
-		'I care about clean architecture, reproducible environments, and systems that are fast, observable, and maintainable.'
+		"I'm an up-and-coming machine learning engineer focused on RAG, fine-tuning, and using AI to automate real systems. I'm an IT student at Arab International University with about three years of hands-on project experience.",
+		'I enjoy backend work and have explored kernel and systems topics when curiosity pulls me deeper — from REST APIs in Go to tooling on Linux.',
+		'Off the clock I make art and 3D models. I run Arch (and Omarchy/Hyprland-style setups) and like reproducible, config-driven environments.'
 	],
 	terminalLines: [
-		'$ echo $XDG_SESSION_TYPE',
-		'wayland',
-		'$ hyprctl version | head -1',
-		'Hyprland 0.41.x',
-		'$ hyprctl activewindow | grep class',
-		'class: kitty',
-		'$ quickshell --version 2>/dev/null || echo "Quickshell · running"',
-		'Quickshell · running',
+		'$ whoami',
+		'omar-zarraa',
+		'$ curl -s ipinfo.io/city',
+		'Damascus',
+		'$ gh api user --jq .bio',
+		'IT student at Arab International University',
+		'$ ls ~/projects | head -3',
+		'Music_Recommendation_And_Generation  TuxTailor  Univsersity_system_API',
 		'$ echo "workspace ready."',
 		'workspace ready.'
 	]

@@ -90,8 +90,10 @@
 				<p class="qs-popover-title">Contact</p>
 				<div class="qs-popover-row">
 					<a href="mailto:{profile.email}">{profile.email}</a>
+					<a href={profile.whatsapp} target="_blank" rel="noopener">{profile.phone}</a>
 					<a href={profile.linkedin} target="_blank" rel="noopener">LinkedIn</a>
 					<a href={profile.github} target="_blank" rel="noopener">GitHub</a>
+					<a href={profile.resumeUrl} target="_blank" rel="noopener">Resume (PDF)</a>
 					<button type="button" class="linkish" onclick={() => goTo('contact')}>
 						Open contact workspace →
 					</button>
