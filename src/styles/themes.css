@@ -28,6 +28,7 @@
 	--qs-panel-bg: rgba(239, 241, 245, 0.92);
 	--qs-module-hover: rgba(76, 79, 105, 0.08);
 	--qs-popover-bg: #e6e9ef;
+	--hypr-hint-bg: rgba(230, 233, 239, 0.94);
 }
 
 [data-theme='latte'] body::before {
@@ -63,4 +64,5 @@
 	--accent-tint-strong: rgba(198, 160, 246, 0.2);
 	--accent-tint-border: rgba(198, 160, 246, 0.35);
 	--qs-panel-bg: rgba(30, 32, 48, 0.94);
+	--hypr-hint-bg: rgba(24, 25, 38, 0.88);
 }

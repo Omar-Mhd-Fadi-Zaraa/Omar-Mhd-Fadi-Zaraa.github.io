@@ -24,7 +24,10 @@
 <QuickshellBar />
 
 <p class="hypr-hint mono" aria-hidden="true">
-	<span>1–6</span> workspace · <span>↑↓</span> focus
+	<span class="hypr-hint-text">Change workspace:</span>
+	<span class="hypr-hint-keys"><kbd>1</kbd>–<kbd>6</kbd></span>
+	<span class="hypr-hint-text">or</span>
+	<span class="hypr-hint-keys"><kbd>↑</kbd> <kbd>↓</kbd></span>
 </p>
 
 <main id="main" class="hypr-viewport" bind:this={viewport}>
@@ -51,17 +54,42 @@
 		right: 0.75rem;
 		bottom: 0.75rem;
 		z-index: 90;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.35rem 0.4rem;
+		max-width: min(18rem, calc(100vw - 1.5rem));
 		font-size: 0.625rem;
+		line-height: 1.35;
 		color: var(--text-muted);
-		padding: 0.35rem 0.6rem;
+		padding: 0.4rem 0.65rem;
 		border-radius: var(--radius-pill);
-		background: rgba(30, 30, 46, 0.65);
+		background: var(--hypr-hint-bg);
 		border: 1px solid var(--border);
+		box-shadow: var(--shadow);
 		pointer-events: none;
 	}
 
-	.hypr-hint span {
-		color: var(--accent-secondary);
+	.hypr-hint-text {
+		color: var(--text-secondary);
+	}
+
+	.hypr-hint-keys {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.2rem;
+	}
+
+	.hypr-hint kbd {
+		display: inline-block;
+		padding: 0.1rem 0.35rem;
+		font-family: inherit;
+		font-size: 0.625rem;
+		color: var(--text-primary);
+		background: var(--bg-elevated);
+		border: 1px solid var(--border-bright);
+		border-radius: 4px;
 	}
 
 	.contact-ws {
