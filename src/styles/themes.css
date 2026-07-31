@@ -1,0 +1,66 @@
+/* Catppuccin theme variants — applied via data-theme on <html> */
+
+[data-theme='latte'] {
+	--bg-crust: #dce0e8;
+	--bg-root: #eff1f5;
+	--bg-mantle: #e6e9ef;
+	--bg-surface: rgba(239, 241, 245, 0.85);
+	--bg-elevated: #ccd0da;
+	--bg-terminal: rgba(230, 233, 239, 0.95);
+	--border: rgba(124, 127, 147, 0.35);
+	--border-bright: rgba(76, 79, 105, 0.25);
+	--text-primary: #4c4f69;
+	--text-secondary: #5c5f77;
+	--text-muted: #7c7f93;
+	--accent-primary: #8839ef;
+	--accent-primary-rgb: 136, 57, 239;
+	--accent-secondary: #179299;
+	--accent-highlight: #ea76cb;
+	--accent-green: #40a02b;
+	--accent-cyan: #1e66f5;
+	--accent-orange: #fe640b;
+	--accent-purple: #7287fd;
+	--accent-red: #d20f39;
+	--accent-tint: rgba(136, 57, 239, 0.1);
+	--accent-tint-strong: rgba(136, 57, 239, 0.16);
+	--accent-tint-border: rgba(136, 57, 239, 0.28);
+	--shadow: 0 8px 32px rgba(76, 79, 105, 0.15);
+	--qs-panel-bg: rgba(239, 241, 245, 0.92);
+	--qs-module-hover: rgba(76, 79, 105, 0.08);
+	--qs-popover-bg: #e6e9ef;
+}
+
+[data-theme='latte'] body::before {
+	opacity: 0.45;
+}
+
+[data-theme='latte'] body::after {
+	background: linear-gradient(180deg, rgba(239, 241, 245, 0.2), rgba(220, 224, 232, 0.5));
+}
+
+[data-theme='macchiato'] {
+	--bg-crust: #181926;
+	--bg-root: #24273a;
+	--bg-mantle: #1e2030;
+	--bg-surface: rgba(36, 39, 58, 0.72);
+	--bg-elevated: #363a4f;
+	--bg-terminal: rgba(30, 32, 48, 0.94);
+	--border: rgba(91, 96, 120, 0.5);
+	--border-bright: rgba(183, 189, 248, 0.3);
+	--text-primary: #cad3f5;
+	--text-secondary: #a5adcb;
+	--text-muted: #6e738d;
+	--accent-primary: #c6a0f6;
+	--accent-primary-rgb: 198, 160, 246;
+	--accent-secondary: #8bd5ca;
+	--accent-highlight: #f5bde6;
+	--accent-green: #a6da95;
+	--accent-cyan: #8aadf4;
+	--accent-orange: #f5a97f;
+	--accent-purple: #b7bdf8;
+	--accent-red: #ed8796;
+	--accent-tint: rgba(198, 160, 246, 0.12);
+	--accent-tint-strong: rgba(198, 160, 246, 0.2);
+	--accent-tint-border: rgba(198, 160, 246, 0.35);
+	--qs-panel-bg: rgba(30, 32, 48, 0.94);
+}

@@ -1,0 +1,278 @@
+/* Hyprland + Quickshell on Arch — Catppuccin Mocha–inspired tokens */
+:root {
+	--bg-crust: #11111b;
+	--bg-root: #1e1e2e;
+	--bg-mantle: #181825;
+	--bg-surface: rgba(30, 30, 46, 0.65);
+	--bg-elevated: #313244;
+	--bg-terminal: rgba(24, 24, 37, 0.92);
+	--border: rgba(69, 71, 90, 0.55);
+	--border-bright: rgba(137, 180, 250, 0.35);
+	--hypr-active: #cba6f7;
+	--text-primary: #cdd6f4;
+	--text-secondary: #a6adc8;
+	--text-muted: #6c7086;
+	--accent-primary: #cba6f7;
+	--accent-primary-rgb: 203, 166, 247;
+	--accent-secondary: #94e2d5;
+	--accent-highlight: #f5c2e7;
+	--accent-green: #a6e3a1;
+	--accent-cyan: #74c7ec;
+	--accent-orange: #fab387;
+	--accent-purple: #b4befe;
+	--accent-red: #f38ba8;
+	--accent-tint: rgba(203, 166, 247, 0.1);
+	--accent-tint-strong: rgba(203, 166, 247, 0.18);
+	--accent-tint-border: rgba(203, 166, 247, 0.35);
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+	--radius: 10px;
+	--radius-lg: 14px;
+	--radius-hypr: 12px;
+	--radius-pill: 999px;
+	--shadow: 0 8px 32px rgba(17, 17, 27, 0.55);
+	--glass-blur: 20px;
+	--max-width: 1100px;
+	--qs-bar-height: 34px;
+	--header-height: var(--qs-bar-height);
+	--qs-panel-bg: rgba(24, 24, 37, 0.94);
+	--qs-module-hover: rgba(255, 255, 255, 0.06);
+	--qs-popover-bg: var(--bg-mantle);
+	--transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: var(--font-sans);
+	background: var(--bg-crust);
+	color: var(--text-primary);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	min-height: 100vh;
+}
+
+/* Hyprland-style wallpaper blur (aurora under the desktop) */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background:
+		radial-gradient(ellipse 90% 55% at 15% 15%, rgba(203, 166, 247, 0.22), transparent 55%),
+		radial-gradient(ellipse 70% 45% at 85% 8%, rgba(148, 226, 213, 0.16), transparent 50%),
+		radial-gradient(ellipse 55% 50% at 75% 85%, rgba(245, 194, 231, 0.1), transparent 55%),
+		radial-gradient(ellipse 40% 35% at 40% 60%, rgba(116, 199, 236, 0.08), transparent 50%);
+	pointer-events: none;
+	z-index: -2;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(17, 17, 27, 0.15), rgba(17, 17, 27, 0.65));
+	pointer-events: none;
+	z-index: -1;
+}
+
+a {
+	color: var(--accent-cyan);
+	text-decoration: none;
+	transition: color var(--transition);
+}
+
+a:hover {
+	color: var(--accent-secondary);
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+	font-size: 1.125rem;
+}
+
+code,
+.mono {
+	font-family: var(--font-mono);
+}
+
+.container {
+	width: min(100% - 2rem, var(--max-width));
+	margin-inline: auto;
+}
+
+.section {
+	padding-block: 0;
+}
+
+/* Quickshell module–style section labels */
+.section-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	color: var(--accent-primary);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin-bottom: 0.75rem;
+	padding: 0.25rem 0.75rem;
+	background: var(--accent-tint);
+	border: 1px solid var(--accent-tint-border);
+	border-radius: var(--radius-pill);
+}
+
+.section-label::before {
+	content: '◇';
+	color: var(--accent-secondary);
+	font-size: 0.625rem;
+}
+
+.section-title {
+	margin-bottom: 0.5rem;
+}
+
+.section-desc {
+	color: var(--text-secondary);
+	max-width: 55ch;
+	margin-bottom: 2.5rem;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.625rem 1.25rem;
+	font-family: var(--font-mono);
+	font-size: 0.875rem;
+	font-weight: 500;
+	border-radius: var(--radius-pill);
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition:
+		background var(--transition),
+		border-color var(--transition),
+		color var(--transition),
+		transform var(--transition),
+		box-shadow var(--transition);
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, var(--accent-primary), #a78bfa);
+	color: var(--bg-crust);
+	border-color: transparent;
+	box-shadow: 0 0 20px rgba(203, 166, 247, 0.25);
+}
+
+.btn-primary:hover {
+	color: var(--bg-crust);
+	box-shadow: 0 0 28px rgba(203, 166, 247, 0.4);
+}
+
+.btn-outline {
+	background: var(--accent-tint);
+	color: var(--text-primary);
+	border-color: var(--accent-tint-border);
+	backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+	border-color: var(--accent-secondary);
+	color: var(--accent-secondary);
+}
+
+.btn-ghost {
+	background: transparent;
+	color: var(--text-secondary);
+	border-color: transparent;
+	padding-inline: 0.75rem;
+}
+
+.btn-ghost:hover {
+	color: var(--accent-primary);
+}
+
+/* Frosted panels (Hyprland blur + Quickshell surfaces) */
+.card {
+	background: var(--bg-surface);
+	backdrop-filter: blur(var(--glass-blur));
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	border: 1px solid var(--border);
+	border-radius: var(--radius-lg);
+	padding: 1.5rem;
+	transition:
+		border-color var(--transition),
+		box-shadow var(--transition);
+}
+
+.card:hover {
+	border-color: var(--border-bright);
+	box-shadow: var(--shadow);
+}
+
+.tag {
+	display: inline-block;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	padding: 0.2rem 0.55rem;
+	border-radius: var(--radius-pill);
+	background: var(--bg-elevated);
+	color: var(--text-secondary);
+	border: 1px solid var(--border);
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent-primary);
+	outline-offset: 2px;
+}
+
+::selection {
+	background: rgba(203, 166, 247, 0.35);
+}
+
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: 1rem;
+	padding: 0.5rem 1rem;
+	background: var(--accent-primary);
+	color: var(--bg-crust);
+	border-radius: var(--radius-pill);
+	z-index: 9999;
+}
+
+.skip-link:focus {
+	top: 1rem;
+}
