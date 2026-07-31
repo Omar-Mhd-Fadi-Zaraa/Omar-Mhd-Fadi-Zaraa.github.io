@@ -1,6 +1,7 @@
 <script>
-	import { skills } from '../data/portfolio.js';
+	import { skills, proficiencyLabels } from '../data/portfolio.js';
 	import { skillIconUrl } from './skill-icons.js';
+	import { projectHighlight } from './project-highlight.svelte.js';
 
 	const categories = [
 		{ id: 'all', label: 'All' },
@@ -17,6 +18,11 @@
 			? skills
 			: skills.filter((s) => s.category === activeCategory)
 	);
+
+	/** @param {{ projectId: string }} skill */
+	function onSkillClick(skill) {
+		projectHighlight.focus(skill.projectId);
+	}
 </script>
 
 <section class="hypr-workspace section skills" id="skills">
@@ -45,7 +51,12 @@
 		<div class="hypr-tile hypr-tile--focused hypr-scroll hypr-tile--fill">
 			<div class="skills-grid">
 				{#each filteredSkills as skill (skill.name)}
-					<div class="skill-card card">
+					<button
+						type="button"
+						class="skill-card card"
+						onclick={() => onSkillClick(skill)}
+						aria-label="{skill.name} — {proficiencyLabels[skill.proficiency]}. View related project."
+					>
 						<div class="skill-title">
 							<span class="skill-icons" aria-hidden="true">
 								{#each skill.icons as slug (slug)}
@@ -62,7 +73,8 @@
 							</span>
 							<span class="skill-name">{skill.name}</span>
 						</div>
-					</div>
+						<span class="skill-proficiency mono">{proficiencyLabels[skill.proficiency]}</span>
+					</button>
 				{/each}
 			</div>
 		</div>
@@ -112,7 +124,30 @@
 	}
 
 	.skill-card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
 		padding: 0.75rem 1rem;
+		width: 100%;
+		text-align: left;
+		font: inherit;
+		color: inherit;
+		cursor: pointer;
+		transition:
+			border-color var(--transition),
+			box-shadow var(--transition),
+			transform var(--transition);
+	}
+
+	.skill-card:hover {
+		border-color: var(--border-bright);
+		transform: translateY(-1px);
+	}
+
+	.skill-card:focus-visible {
+		outline: 2px solid var(--accent-primary);
+		outline-offset: 2px;
 	}
 
 	.skill-title {
@@ -140,5 +175,17 @@
 		font-size: 0.875rem;
 		font-weight: 500;
 		line-height: 1.3;
+	}
+
+	.skill-proficiency {
+		font-size: 0.6875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--text-muted);
+	}
+
+	.skill-proficiency::before {
+		content: '· ';
+		opacity: 0.6;
 	}
 </style>

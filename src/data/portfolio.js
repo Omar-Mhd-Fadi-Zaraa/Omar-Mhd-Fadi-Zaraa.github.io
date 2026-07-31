@@ -1,26 +1,123 @@
-/** @typedef {{ name: string; category: 'ai' | 'linux' | 'dev' | 'tools'; icons: string[] }} Skill */
+/** @typedef {'daily' | 'strong' | 'learning'} Proficiency */
+/** @typedef {{ name: string; category: 'ai' | 'linux' | 'dev' | 'tools'; icons: string[]; proficiency: Proficiency; projectId: string }} Skill */
+
+/** @type {Record<Proficiency, string>} */
+export const proficiencyLabels = {
+	daily: 'Daily driver',
+	strong: 'Project-ready',
+	learning: 'Learning'
+};
 /** @typedef {{ id: string; title: string; description: string; tags: string[]; category: 'ai' | 'linux' | 'fullstack'; github?: string; demo?: string; featured?: boolean }} Project */
 
 const GH = 'https://github.com/Omar-Mhd-Fadi-Zaraa';
 
 /** @type {Skill[]} */
 export const skills = [
-	{ name: 'Python', category: 'ai', icons: ['python'] },
-	{ name: 'PyTorch', category: 'ai', icons: ['pytorch'] },
-	{ name: 'TensorFlow', category: 'ai', icons: ['tensorflow'] },
-	{ name: 'scikit-learn', category: 'ai', icons: ['scikitlearn'] },
-	{ name: 'Pandas / NumPy', category: 'ai', icons: ['pandas', 'numpy'] },
-	{ name: 'RAG & fine-tuning', category: 'ai', icons: ['huggingface'] },
-	{ name: 'Arch Linux', category: 'linux', icons: ['archlinux'] },
-	{ name: 'Linux Mint', category: 'linux', icons: ['linuxmint'] },
-	{ name: 'Bash / Shell', category: 'linux', icons: ['gnubash'] },
-	{ name: 'Docker', category: 'linux', icons: ['docker'] },
-	{ name: 'Go', category: 'dev', icons: ['go'] },
-	{ name: 'Gin / REST APIs', category: 'dev', icons: ['go'] },
-	{ name: 'PostgreSQL / SQLite', category: 'dev', icons: ['postgresql', 'sqlite'] },
-	{ name: 'Svelte', category: 'dev', icons: ['svelte'] },
-	{ name: 'Git', category: 'tools', icons: ['git'] },
-	{ name: 'Matplotlib / Seaborn', category: 'tools', icons: ['devicon:matplotlib'] }
+	{
+		name: 'Python',
+		category: 'ai',
+		icons: ['python'],
+		proficiency: 'daily',
+		projectId: 'music-ml'
+	},
+	{
+		name: 'PyTorch',
+		category: 'ai',
+		icons: ['pytorch'],
+		proficiency: 'daily',
+		projectId: 'music-ml'
+	},
+	{
+		name: 'TensorFlow',
+		category: 'ai',
+		icons: ['tensorflow'],
+		proficiency: 'strong',
+		projectId: 'music-ml'
+	},
+	{
+		name: 'scikit-learn',
+		category: 'ai',
+		icons: ['scikitlearn'],
+		proficiency: 'strong',
+		projectId: 'heart-titanic-ml'
+	},
+	{
+		name: 'Pandas / NumPy',
+		category: 'ai',
+		icons: ['pandas', 'numpy'],
+		proficiency: 'daily',
+		projectId: 'denmark-de-jobs'
+	},
+	{
+		name: 'RAG & fine-tuning',
+		category: 'ai',
+		icons: ['huggingface'],
+		proficiency: 'strong',
+		projectId: 'tuxtailor'
+	},
+	{
+		name: 'Arch Linux',
+		category: 'linux',
+		icons: ['archlinux'],
+		proficiency: 'daily',
+		projectId: 'omarchy-setup'
+	},
+	{
+		name: 'Linux Mint',
+		category: 'linux',
+		icons: ['linuxmint'],
+		proficiency: 'strong',
+		projectId: 'omarchy-setup'
+	},
+	{
+		name: 'Bash / Shell',
+		category: 'linux',
+		icons: ['gnubash'],
+		proficiency: 'daily',
+		projectId: 'gittracker'
+	},
+	{
+		name: 'Docker',
+		category: 'linux',
+		icons: ['docker'],
+		proficiency: 'strong',
+		projectId: 'tuxtailor'
+	},
+	{
+		name: 'Go',
+		category: 'dev',
+		icons: ['go'],
+		proficiency: 'strong',
+		projectId: 'university-api'
+	},
+	{
+		name: 'PostgreSQL / SQLite',
+		category: 'dev',
+		icons: ['postgresql', 'sqlite'],
+		proficiency: 'strong',
+		projectId: 'university-api'
+	},
+	{
+		name: 'Svelte',
+		category: 'dev',
+		icons: ['svelte'],
+		proficiency: 'learning',
+		projectId: 'event-api'
+	},
+	{
+		name: 'Git',
+		category: 'tools',
+		icons: ['git'],
+		proficiency: 'daily',
+		projectId: 'gittracker'
+	},
+	{
+		name: 'Matplotlib / Seaborn',
+		category: 'tools',
+		icons: ['devicon:matplotlib'],
+		proficiency: 'strong',
+		projectId: 'denmark-de-jobs'
+	}
 ];
 
 /** @type {Project[]} */

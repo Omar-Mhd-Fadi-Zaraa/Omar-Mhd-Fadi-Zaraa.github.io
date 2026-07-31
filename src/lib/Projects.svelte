@@ -1,5 +1,6 @@
 <script>
 	import { projects } from '../data/portfolio.js';
+	import { projectHighlight } from './project-highlight.svelte.js';
 
 	const categories = [
 		{ id: 'all', label: 'All' },
@@ -17,6 +18,20 @@
 	);
 
 	let featuredProjects = $derived(projects.filter((p) => p.featured));
+
+	$effect(() => {
+		const id = projectHighlight.highlightedProjectId;
+		if (!id) return;
+		const project = projects.find((p) => p.id === id);
+		if (!project) return;
+		if (activeCategory !== 'all' && project.category !== activeCategory) {
+			activeCategory = 'all';
+		}
+	});
+
+	function isHighlighted(/** @type {string} */ id) {
+		return projectHighlight.highlightedProjectId === id;
+	}
 </script>
 
 <section class="hypr-workspace section projects" id="projects">
@@ -47,7 +62,11 @@
 				<h3 class="tile-heading mono">featured · master</h3>
 				<div class="featured-stack">
 					{#each featuredProjects as project (project.id)}
-						<article class="featured-card card">
+						<article
+							class="featured-card card"
+							class:highlighted={isHighlighted(project.id)}
+							data-project-id={project.id}
+						>
 							<div class="featured-badge">featured</div>
 							<h3>{project.title}</h3>
 							<p>{project.description}</p>
@@ -77,7 +96,11 @@
 				<h3 class="tile-heading mono">all · stack</h3>
 				<div class="projects-grid">
 					{#each filteredProjects as project (project.id)}
-						<article class="project-card card">
+						<article
+							class="project-card card"
+							class:highlighted={isHighlighted(project.id)}
+							data-project-id={project.id}
+						>
 							<div class="project-category mono">{project.category}</div>
 							<h3>{project.title}</h3>
 							<p>{project.description}</p>
@@ -125,6 +148,32 @@
 	.featured-card {
 		position: relative;
 		border-color: var(--accent-tint-border);
+		transition:
+			border-color 0.35s ease,
+			box-shadow 0.35s ease;
+	}
+
+	.featured-card.highlighted,
+	.project-card.highlighted {
+		border-color: var(--accent-primary);
+		box-shadow:
+			0 0 0 1px rgba(var(--accent-primary-rgb), 0.45),
+			0 0 24px rgba(var(--accent-primary-rgb), 0.2);
+		animation: project-pulse 1.2s ease-in-out 2;
+	}
+
+	@keyframes project-pulse {
+		0%,
+		100% {
+			box-shadow:
+				0 0 0 1px rgba(var(--accent-primary-rgb), 0.45),
+				0 0 24px rgba(var(--accent-primary-rgb), 0.2);
+		}
+		50% {
+			box-shadow:
+				0 0 0 2px rgba(var(--accent-primary-rgb), 0.65),
+				0 0 32px rgba(var(--accent-primary-rgb), 0.35);
+		}
 	}
 
 	.featured-badge {
