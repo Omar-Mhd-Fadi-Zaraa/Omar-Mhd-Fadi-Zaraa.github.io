@@ -46,34 +46,21 @@
 			<div class="skills-grid">
 				{#each filteredSkills as skill (skill.name)}
 					<div class="skill-card card">
-						<div class="skill-header">
-							<div class="skill-title">
-								<span class="skill-icons" aria-hidden="true">
-									{#each skill.icons as slug (slug)}
-										<img
-											class="skill-icon"
-											src={skillIconUrl(slug)}
-											alt=""
-											width="20"
-											height="20"
-											loading="lazy"
-											decoding="async"
-										/>
-									{/each}
-								</span>
-								<span class="skill-name">{skill.name}</span>
-							</div>
-							<span class="skill-level mono">{skill.level}%</span>
-						</div>
-						<div class="skill-bar">
-							<div
-								class="skill-fill"
-								class:ai={skill.category === 'ai'}
-								class:linux={skill.category === 'linux'}
-								class:dev={skill.category === 'dev'}
-								class:tools={skill.category === 'tools'}
-								style:width="{skill.level}%"
-							></div>
+						<div class="skill-title">
+							<span class="skill-icons" aria-hidden="true">
+								{#each skill.icons as slug (slug)}
+									<img
+										class="skill-icon"
+										src={skillIconUrl(slug)}
+										alt=""
+										width="20"
+										height="20"
+										loading="lazy"
+										decoding="async"
+									/>
+								{/each}
+							</span>
+							<span class="skill-name">{skill.name}</span>
 						</div>
 					</div>
 				{/each}
@@ -125,15 +112,7 @@
 	}
 
 	.skill-card {
-		padding: 1rem 1.25rem;
-	}
-
-	.skill-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		gap: 0.5rem;
-		margin-bottom: 0.625rem;
+		padding: 0.75rem 1rem;
 	}
 
 	.skill-title {
@@ -158,39 +137,8 @@
 	}
 
 	.skill-name {
-		font-size: 0.9375rem;
+		font-size: 0.875rem;
 		font-weight: 500;
 		line-height: 1.3;
-	}
-
-	.skill-level {
-		font-size: 0.75rem;
-		color: var(--text-muted);
-	}
-
-	.skill-bar {
-		height: 4px;
-		background: var(--bg-elevated);
-		border-radius: 2px;
-		overflow: hidden;
-	}
-
-	.skill-fill {
-		height: 100%;
-		border-radius: 2px;
-		transition: width 0.6s ease;
-	}
-
-	.skill-fill.ai {
-		background: var(--accent-cyan);
-	}
-	.skill-fill.linux {
-		background: var(--accent-secondary);
-	}
-	.skill-fill.dev {
-		background: var(--accent-orange);
-	}
-	.skill-fill.tools {
-		background: var(--accent-purple);
 	}
 </style>

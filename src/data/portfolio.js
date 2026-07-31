@@ -1,26 +1,26 @@
-/** @typedef {{ name: string; level: number; category: 'ai' | 'linux' | 'dev' | 'tools'; icons: string[] }} Skill */
+/** @typedef {{ name: string; category: 'ai' | 'linux' | 'dev' | 'tools'; icons: string[] }} Skill */
 /** @typedef {{ id: string; title: string; description: string; tags: string[]; category: 'ai' | 'linux' | 'fullstack'; github?: string; demo?: string; featured?: boolean }} Project */
 
 const GH = 'https://github.com/Omar-Mhd-Fadi-Zaraa';
 
 /** @type {Skill[]} */
 export const skills = [
-	{ name: 'Python', level: 92, category: 'ai', icons: ['python'] },
-	{ name: 'PyTorch', level: 86, category: 'ai', icons: ['pytorch'] },
-	{ name: 'TensorFlow', level: 84, category: 'ai', icons: ['tensorflow'] },
-	{ name: 'scikit-learn', level: 82, category: 'ai', icons: ['scikitlearn'] },
-	{ name: 'Pandas / NumPy', level: 88, category: 'ai', icons: ['pandas', 'numpy'] },
-	{ name: 'RAG & fine-tuning', level: 80, category: 'ai', icons: ['huggingface'] },
-	{ name: 'Arch Linux', level: 88, category: 'linux', icons: ['archlinux'] },
-	{ name: 'Linux Mint', level: 78, category: 'linux', icons: ['linuxmint'] },
-	{ name: 'Bash / Shell', level: 82, category: 'linux', icons: ['gnubash'] },
-	{ name: 'Docker', level: 76, category: 'linux', icons: ['docker'] },
-	{ name: 'Go', level: 74, category: 'dev', icons: ['go'] },
-	{ name: 'Gin / REST APIs', level: 72, category: 'dev', icons: ['go'] },
-	{ name: 'PostgreSQL / SQLite', level: 70, category: 'dev', icons: ['postgresql', 'sqlite'] },
-	{ name: 'Svelte', level: 68, category: 'dev', icons: ['svelte'] },
-	{ name: 'Git', level: 88, category: 'tools', icons: ['git'] },
-	{ name: 'Matplotlib / Seaborn', level: 80, category: 'tools', icons: ['devicon:matplotlib'] }
+	{ name: 'Python', category: 'ai', icons: ['python'] },
+	{ name: 'PyTorch', category: 'ai', icons: ['pytorch'] },
+	{ name: 'TensorFlow', category: 'ai', icons: ['tensorflow'] },
+	{ name: 'scikit-learn', category: 'ai', icons: ['scikitlearn'] },
+	{ name: 'Pandas / NumPy', category: 'ai', icons: ['pandas', 'numpy'] },
+	{ name: 'RAG & fine-tuning', category: 'ai', icons: ['huggingface'] },
+	{ name: 'Arch Linux', category: 'linux', icons: ['archlinux'] },
+	{ name: 'Linux Mint', category: 'linux', icons: ['linuxmint'] },
+	{ name: 'Bash / Shell', category: 'linux', icons: ['gnubash'] },
+	{ name: 'Docker', category: 'linux', icons: ['docker'] },
+	{ name: 'Go', category: 'dev', icons: ['go'] },
+	{ name: 'Gin / REST APIs', category: 'dev', icons: ['go'] },
+	{ name: 'PostgreSQL / SQLite', category: 'dev', icons: ['postgresql', 'sqlite'] },
+	{ name: 'Svelte', category: 'dev', icons: ['svelte'] },
+	{ name: 'Git', category: 'tools', icons: ['git'] },
+	{ name: 'Matplotlib / Seaborn', category: 'tools', icons: ['devicon:matplotlib'] }
 ];
 
 /** @type {Project[]} */
