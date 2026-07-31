@@ -1,26 +1,26 @@
-/** @typedef {{ name: string; level: number; category: 'ai' | 'linux' | 'dev' | 'tools' }} Skill */
+/** @typedef {{ name: string; level: number; category: 'ai' | 'linux' | 'dev' | 'tools'; icons: string[] }} Skill */
 /** @typedef {{ id: string; title: string; description: string; tags: string[]; category: 'ai' | 'linux' | 'fullstack'; github?: string; demo?: string; featured?: boolean }} Project */
 
 const GH = 'https://github.com/Omar-Mhd-Fadi-Zaraa';
 
 /** @type {Skill[]} */
 export const skills = [
-	{ name: 'Python', level: 92, category: 'ai' },
-	{ name: 'PyTorch', level: 86, category: 'ai' },
-	{ name: 'TensorFlow', level: 84, category: 'ai' },
-	{ name: 'scikit-learn', level: 82, category: 'ai' },
-	{ name: 'Pandas / NumPy', level: 88, category: 'ai' },
-	{ name: 'RAG & fine-tuning', level: 80, category: 'ai' },
-	{ name: 'Arch Linux', level: 88, category: 'linux' },
-	{ name: 'Linux Mint', level: 78, category: 'linux' },
-	{ name: 'Bash / Shell', level: 82, category: 'linux' },
-	{ name: 'Docker', level: 76, category: 'linux' },
-	{ name: 'Go', level: 74, category: 'dev' },
-	{ name: 'Gin / REST APIs', level: 72, category: 'dev' },
-	{ name: 'PostgreSQL / SQLite', level: 70, category: 'dev' },
-	{ name: 'Svelte', level: 68, category: 'dev' },
-	{ name: 'Git', level: 88, category: 'tools' },
-	{ name: 'Matplotlib / Seaborn', level: 80, category: 'tools' }
+	{ name: 'Python', level: 92, category: 'ai', icons: ['python'] },
+	{ name: 'PyTorch', level: 86, category: 'ai', icons: ['pytorch'] },
+	{ name: 'TensorFlow', level: 84, category: 'ai', icons: ['tensorflow'] },
+	{ name: 'scikit-learn', level: 82, category: 'ai', icons: ['scikitlearn'] },
+	{ name: 'Pandas / NumPy', level: 88, category: 'ai', icons: ['pandas', 'numpy'] },
+	{ name: 'RAG & fine-tuning', level: 80, category: 'ai', icons: ['openai'] },
+	{ name: 'Arch Linux', level: 88, category: 'linux', icons: ['archlinux'] },
+	{ name: 'Linux Mint', level: 78, category: 'linux', icons: ['linuxmint'] },
+	{ name: 'Bash / Shell', level: 82, category: 'linux', icons: ['gnubash'] },
+	{ name: 'Docker', level: 76, category: 'linux', icons: ['docker'] },
+	{ name: 'Go', level: 74, category: 'dev', icons: ['go'] },
+	{ name: 'Gin / REST APIs', level: 72, category: 'dev', icons: ['go'] },
+	{ name: 'PostgreSQL / SQLite', level: 70, category: 'dev', icons: ['postgresql', 'sqlite'] },
+	{ name: 'Svelte', level: 68, category: 'dev', icons: ['svelte'] },
+	{ name: 'Git', level: 88, category: 'tools', icons: ['git'] },
+	{ name: 'Matplotlib / Seaborn', level: 80, category: 'tools', icons: ['devicon:matplotlib'] }
 ];
 
 /** @type {Project[]} */

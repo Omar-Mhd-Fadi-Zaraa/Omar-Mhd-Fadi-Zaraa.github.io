@@ -1,5 +1,6 @@
 <script>
 	import { skills } from '../data/portfolio.js';
+	import { skillIconUrl } from './skill-icons.js';
 
 	const categories = [
 		{ id: 'all', label: 'All' },
@@ -46,7 +47,22 @@
 				{#each filteredSkills as skill (skill.name)}
 					<div class="skill-card card">
 						<div class="skill-header">
-							<span class="skill-name">{skill.name}</span>
+							<div class="skill-title">
+								<span class="skill-icons" aria-hidden="true">
+									{#each skill.icons as slug (slug)}
+										<img
+											class="skill-icon"
+											src={skillIconUrl(slug)}
+											alt=""
+											width="20"
+											height="20"
+											loading="lazy"
+											decoding="async"
+										/>
+									{/each}
+								</span>
+								<span class="skill-name">{skill.name}</span>
+							</div>
 							<span class="skill-level mono">{skill.level}%</span>
 						</div>
 						<div class="skill-bar">
@@ -115,13 +131,36 @@
 	.skill-header {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
+		gap: 0.5rem;
 		margin-bottom: 0.625rem;
+	}
+
+	.skill-title {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		min-width: 0;
+	}
+
+	.skill-icons {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		flex-shrink: 0;
+	}
+
+	.skill-icon {
+		display: block;
+		width: 1.25rem;
+		height: 1.25rem;
+		object-fit: contain;
 	}
 
 	.skill-name {
 		font-size: 0.9375rem;
 		font-weight: 500;
+		line-height: 1.3;
 	}
 
 	.skill-level {
