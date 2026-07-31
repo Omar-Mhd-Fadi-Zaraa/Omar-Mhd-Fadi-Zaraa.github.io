@@ -10,7 +10,7 @@ export const skills = [
 	{ name: 'TensorFlow', level: 84, category: 'ai', icons: ['tensorflow'] },
 	{ name: 'scikit-learn', level: 82, category: 'ai', icons: ['scikitlearn'] },
 	{ name: 'Pandas / NumPy', level: 88, category: 'ai', icons: ['pandas', 'numpy'] },
-	{ name: 'RAG & fine-tuning', level: 80, category: 'ai', icons: ['openai'] },
+	{ name: 'RAG & fine-tuning', level: 80, category: 'ai', icons: ['huggingface'] },
 	{ name: 'Arch Linux', level: 88, category: 'linux', icons: ['archlinux'] },
 	{ name: 'Linux Mint', level: 78, category: 'linux', icons: ['linuxmint'] },
 	{ name: 'Bash / Shell', level: 82, category: 'linux', icons: ['gnubash'] },
