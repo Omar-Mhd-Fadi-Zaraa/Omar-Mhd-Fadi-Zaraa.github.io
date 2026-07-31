@@ -1,6 +1,6 @@
 <script>
-	/** @type {{ title?: string; lines: string[]; animate?: boolean }} */
-	let { title = 'kitty', lines, animate = false } = $props();
+	/** @type {{ lines: string[]; animate?: boolean }} */
+	let { lines, animate = false } = $props();
 
 	let visibleLines = $state(/** @type {string[]} */ ([]));
 	let lineIndex = $state(0);
@@ -48,14 +48,6 @@
 <div class="hypr-window">
 	<div class="hypr-window-border" aria-hidden="true"></div>
 	<div class="terminal">
-		<div class="terminal-header">
-			<div class="terminal-buttons">
-				<span class="btn-close"></span>
-				<span class="btn-minimize"></span>
-				<span class="btn-maximize"></span>
-			</div>
-			<span class="terminal-title">{title}</span>
-		</div>
 		<div class="terminal-body">
 			{#each visibleLines as line, i (i)}
 				<div class="terminal-line" class:cmd={line.startsWith('$')}>

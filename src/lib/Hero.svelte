@@ -66,7 +66,7 @@
 			</div>
 
 			<div class="hypr-tile hypr-tile--stack hypr-scroll terminal-tile">
-				<Terminal title="kitty — fish @ arch" lines={profile.terminalLines} animate />
+				<Terminal lines={profile.terminalLines} animate />
 			</div>
 		</div>
 	</div>
