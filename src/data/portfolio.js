@@ -24,7 +24,7 @@ export const skills = [
 		name: 'PyTorch',
 		category: 'ai',
 		icons: ['pytorch'],
-		proficiency: 'daily',
+		proficiency: 'strong',
 		projectId: 'music-ml'
 	},
 	{
@@ -45,8 +45,15 @@ export const skills = [
 		name: 'Pandas / NumPy',
 		category: 'ai',
 		icons: ['pandas', 'numpy'],
-		proficiency: 'daily',
+		proficiency: 'strong',
 		projectId: 'denmark-de-jobs'
+	},
+	{
+		name: 'LangChain',
+		category: 'ai',
+		icons: ['langchain'],
+		proficiency: 'learning',
+		projectId: 'tuxtailor'
 	},
 	{
 		name: 'RAG & fine-tuning',
